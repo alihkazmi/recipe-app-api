@@ -18,10 +18,12 @@ RUN python -m venv /py && \
         then /py/bin/pip install -r /tmp/requirements.dev.txt ; \
     fi && \
     rm -rf /tmp && \
+    pip3 install flake8 && \
     adduser \
         --disabled-password \
         --no-create-home \
-        django-user
+        django-user \
+    
 
 ENV PATH="/py/bin:$PATH"
 
